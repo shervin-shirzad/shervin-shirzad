@@ -17,6 +17,16 @@
   {
     "title": "3% of the product price",
     "src": "projects/3%-of-the-product-price.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Coffe 3D-Render",
+    "src": "projects/3D-Render-Post1 copy.webp",
+    "orientation": "square"
+  },
+  {
+    "title": "Coffe 3D-Render",
+    "src": "projects/3D-Render-Post1 copy.webp",
     "orientation": "landscape"
   }
 ]
