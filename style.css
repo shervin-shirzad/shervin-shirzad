@@ -1,3 +1,5 @@
+/* استایل‌های پیش‌فرض */
+
 @font-face {
   font-family: 'Museo Slab';
   src: url('fonts/Museo_Slab_100.otf') format('opentype');
@@ -178,4 +180,60 @@ footer {
 
 .social-icons a:hover {
   color: #fff;
+}
+
+/* استایل‌های ریسپانسیو */
+
+/* برای تبلت‌ها */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .gallery {
+    column-count: 2;
+  }
+
+  .project img {
+    min-height: 150px;
+  }
+
+  .theme-switch {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+/* برای گوشی‌های هوشمند */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
+
+  .gallery {
+    column-count: 1;
+  }
+
+  .project img {
+    min-height: 100px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+
+  .social-icons a {
+    font-size: 1rem;
+  }
 }
