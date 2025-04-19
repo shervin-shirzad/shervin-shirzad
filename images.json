@@ -28,5 +28,40 @@
     "title": "Summer Fruit 3D-Render",
     "src": "projects/3D-Render-Post2 copy.webp",
     "orientation": "square"
+  },
+  {
+    "title": "App Store 3D-Render",
+    "src": "projects/3D-Render-Post3 copy.webp",
+    "orientation": "square"
+  },
+  {
+    "title": "Instagram Like 3D-Render",
+    "src": "projects/3D-Render-Post4 copy.webp",
+    "orientation": "square"
+  },
+  {
+    "title": "Amazon 3D-Render",
+    "src": "projects/3D-Render-Post5 copy.webp",
+    "orientation": "square"
+  },
+  {
+    "title": "AD-Beihaq Online Shop",
+    "src": "projects/AD-Beihaq Online Shop copy.webpy",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Apex Instagram Post",
+    "src": "projects/Apex-Post copy.webp",
+    "orientation": "square"
+  },
+  {
+    "title": "Bicycle Story",
+    "src": "projects/Bicycle_StoryA copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Bicycle Post",
+    "src": "projects/BicyclePost copy.webp",
+    "orientation": "portrait"
   }
 ]
