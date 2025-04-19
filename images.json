@@ -2,7 +2,7 @@
   {
     "title": "Attractive Packaging-EFA",
     "src": "projects/Attractive Packaging-EFA_Instagram_Post copy.webp",
-    "orientation": "landscape"
+    "orientation": "square"
   },
   {
     "title": "WordPress Plugin EFA",
@@ -12,11 +12,11 @@
   {
     "title": "Social Media EFA",
     "src": "projects/Social Media-EFA_Instagram_Post copy.webp",
-    "orientation": "portrait"
+    "orientation": "square"
   },
   {
-    "title": "Project 4",
-    "src": "projects/project4.webp",
+    "title": "3% of the product price",
+    "src": "projects/3%-of-the-product-price.webp",
     "orientation": "landscape"
   }
 ]
