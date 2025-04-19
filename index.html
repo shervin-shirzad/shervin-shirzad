@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shervin Shirzad | Portfolio</title>
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --bg-dark: #121212;
+      --text-light: #000000;
+      --text-dark: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      transition: all 0.3s ease;
+    }
+    header {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e1e1e;
+    }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    .toggle-theme {
+      background: none;
+      color: inherit;
+      border: 1px solid #fff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .project {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+    .project img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .project h2 {
+      margin: 0;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #1e1e1e;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #999;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shervin Shirzad</h1>
+    <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+  <main>
+    <section class="gallery" id="gallery"></section>
+  </main>
+  <footer>
+    <div>
+      <a href="https://www.ghub.blog/">Blog</a>
+      <a href="https://instagram.com/shervin.shirzad.ss">Instagram</a>
+      <a href="https://www.linkedin.com/in/shervin-shirzad/">LinkedIn</a>
+      <a href="https://t.me/ShervinShirzad">Telegram</a>
+      <a href="https://wa.me/989355498747">WhatsApp</a>
+    </div>
+    <p>&copy; 2025 Shervin Shirzad</p>
+  </footer>
+
+  <script>
+    fetch('images.json')
+      .then(res => res.json())
+      .then(images => {
+        const gallery = document.getElementById('gallery');
+        images.forEach(img => {
+          const item = document.createElement('div');
+          item.className = 'project';
+          item.innerHTML = `
+            <img src="${img.src}" alt="${img.title}" />
+            <h2>${img.title}</h2>
+          `;
+          gallery.appendChild(item);
+        });
+      });
+
+    function toggleTheme() {
+      const isDark = document.body.style.backgroundColor === 'var(--bg-dark)' || !document.body.style.backgroundColor;
+      document.body.style.backgroundColor = isDark ? 'var(--bg-light)' : 'var(--bg-dark)';
+      document.body.style.color = isDark ? 'var(--text-light)' : 'var(--text-dark)';
+    }
+  </script>
+</body>
+</html>
