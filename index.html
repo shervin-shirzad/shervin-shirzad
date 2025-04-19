@@ -208,8 +208,10 @@
           const item = document.createElement('div');
           item.className = 'project';
           item.innerHTML = `
-            <img src="${img.src}" alt="${img.title}" />
-            <h2>${img.title}</h2>
+            <a href="${img.src}" target="_blank">
+              <img src="${img.src}" alt="${img.title}" />
+              <h2>${img.title}</h2>
+            </a>
           `;
           gallery.appendChild(item);
         });
