@@ -27,7 +27,7 @@
     }
 
     :root {
-      --bg-light: #ffffff;
+      --bg-light: #f5f5f5;
       --bg-dark: #121212;
       --text-light: #000000;
       --text-dark: #ffffff;
@@ -44,6 +44,7 @@
     header {
       padding: 2rem;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
@@ -63,15 +64,47 @@
       font-weight: 500;
     }
 
-    .toggle-theme {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+    .theme-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
     }
 
-    .toggle-theme label {
-      font-size: 0.9rem;
+    .theme-switch input {
+      display: none;
+    }
+
+    .slider {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 22px;
+      height: 22px;
+      background-color: white;
+      border-radius: 50%;
+      transition: .4s;
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(24px);
+    }
+
+    .slider {
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: background-color .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
     }
 
     .gallery {
@@ -139,9 +172,11 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="toggle-theme">
-      <label><input type="radio" name="theme" onclick="setTheme('light')"> Light</label>
-      <label><input type="radio" name="theme" onclick="setTheme('dark')" checked> Dark</label>
+    <div class="theme-switch">
+      <label>
+        <input type="checkbox" onchange="toggleTheme(this)">
+        <span class="slider"></span>
+      </label>
     </div>
   </header>
   <main>
@@ -175,9 +210,10 @@
         });
       });
 
-    function setTheme(mode) {
-      document.body.style.backgroundColor = mode === 'dark' ? 'var(--bg-dark)' : 'var(--bg-light)';
-      document.body.style.color = mode === 'dark' ? 'var(--text-dark)' : 'var(--text-light)';
+    function toggleTheme(toggle) {
+      const isDark = !toggle.checked;
+      document.body.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
+      document.body.style.color = isDark ? 'var(--text-dark)' : 'var(--text-light)';
     }
   </script>
 </body>
