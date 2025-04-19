@@ -10,62 +10,85 @@
       --bg-dark: #121212;
       --text-light: #000000;
       --text-dark: #ffffff;
+      --primary: #000;
     }
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-dark);
       transition: all 0.3s ease;
     }
     header {
-      padding: 1rem 2rem;
+      padding: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #1e1e1e;
+      background-color: transparent;
     }
-    header h1 { margin: 0; font-size: 1.5rem; }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
     .toggle-theme {
       background: none;
       color: inherit;
       border: 1px solid #fff;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
       cursor: pointer;
+      font-size: 0.9rem;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
       padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
     .project {
-      background: #1a1a1a;
-      border-radius: 10px;
+      background: transparent;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
     }
     .project img {
       width: 100%;
-      display: block;
+      height: auto;
       object-fit: cover;
+      display: block;
     }
     .project h2 {
       margin: 0;
-      padding: 0.8rem 1rem;
+      padding: 1rem;
       font-size: 1rem;
+      font-weight: 400;
+      text-align: center;
+      background-color: rgba(0,0,0,0.6);
+      color: #fff;
     }
     footer {
-      text-align: center;
       padding: 2rem 1rem;
-      background: #1e1e1e;
-      font-size: 0.9rem;
+      text-align: center;
+      font-size: 0.85rem;
+      background-color: transparent;
+      color: #aaa;
     }
     footer a {
-      color: #999;
-      text-decoration: none;
+      color: #aaa;
       margin: 0 0.5rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: #fff;
     }
   </style>
 </head>
