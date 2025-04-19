@@ -63,5 +63,45 @@
     "title": "Bicycle Post",
     "src": "projects/BicyclePost copy.webp",
     "orientation": "portrait"
+  },
+  {
+    "title": "Cash-on-Delivery (COD)",
+    "src": "projects/Cash-on-Delivery (COD) copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Contact Us EFA",
+    "src": "projects/Contact-Us copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Custom Skin Iphon 15 ProMax",
+    "src": "projects/Custom-Skin-Iphon-15-ProMax copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "CCustom Skin Macbook Pro M3",
+    "src": "projects/Custom-Skin-Macbook-Pro-M3 copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Custom Skin Nintendo Switch",
+    "src": "projects/Custom-Skin-Nintendo-Switch copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Custom Skin PS5 Digital Edition",
+    "src": "projects/Custom-Skin-PS5-Digital-Edition copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Custom Skin Xbox Controller",
+    "src": "projects/Custom-Skin-Xbox-Controller copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Custom Skin Xbox X Series",
+    "src": "projects/Custom-Skin-Xbox-X-Series copy.webp",
+    "orientation": "portrait"
   }
 ]
