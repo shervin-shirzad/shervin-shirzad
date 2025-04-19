@@ -36,8 +36,8 @@
     body {
       margin: 0;
       font-family: 'Museo Slab', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
+      background-color: var(--bg-light);
+      color: var(--text-light);
       transition: all 0.3s ease;
     }
 
@@ -87,6 +87,9 @@
       display: inline-block;
       width: 50px;
       height: 26px;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: background-color .4s;
     }
 
     .slider::before {
@@ -103,12 +106,6 @@
 
     input:checked + .slider::before {
       transform: translateX(24px);
-    }
-
-    .slider {
-      background-color: #ccc;
-      border-radius: 34px;
-      transition: background-color .4s;
     }
 
     input:checked + .slider {
@@ -204,6 +201,20 @@
   </footer>
 
   <script>
+    const body = document.body;
+    const checkbox = document.querySelector('.theme-switch input');
+
+    // Default to light mode
+    body.style.backgroundColor = 'var(--bg-light)';
+    body.style.color = 'var(--text-light)';
+    checkbox.checked = false;
+
+    function toggleTheme(toggle) {
+      const isDark = toggle.checked;
+      body.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
+      body.style.color = isDark ? 'var(--text-dark)' : 'var(--text-light)';
+    }
+
     fetch('images.json')
       .then(res => res.json())
       .then(images => {
@@ -219,12 +230,6 @@
           gallery.appendChild(item);
         });
       });
-
-    function toggleTheme(toggle) {
-      const isDark = !toggle.checked;
-      document.body.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
-      document.body.style.color = isDark ? 'var(--text-dark)' : 'var(--text-light)';
-    }
   </script>
 </body>
 </html>
