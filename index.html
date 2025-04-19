@@ -68,6 +68,14 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: inherit;
+    }
+
+    .theme-switch i {
+      font-size: 1rem;
     }
 
     .theme-switch input {
@@ -173,10 +181,12 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="theme-switch">
+      <i class="fas fa-sun"></i>
       <label>
         <input type="checkbox" onchange="toggleTheme(this)">
         <span class="slider"></span>
       </label>
+      <i class="fas fa-moon"></i>
     </div>
   </header>
   <main>
