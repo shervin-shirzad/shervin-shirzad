@@ -1,5 +1,22 @@
 [
-  { "src": "projects/Attractive Packaging-EFA_Instagram_Post.jpg", "title": "EFA Attractive Packaging" },
-  { "src": "projects/WordPress Plugin-EFA_Instagram_Post.jpg", "title": "EFA WordPress Plugin" },
-  { "src": "projects/Social Media-EFA_Instagram_Post.jpg", "title": "EFA Social Media" }
+  {
+    "title": "Attractive Packaging-EFA",
+    "src": "projects/Attractive Packaging-EFA_Instagram_Post copy.webp",
+    "orientation": "landscape"
+  },
+  {
+    "title": "WordPress Plugin EFA",
+    "src": "projects/WordPress Plugin-EFA_Instagram_Post copy.webp",
+    "orientation": "square"
+  },
+  {
+    "title": "Social Media EFA",
+    "src": "projects/Social Media-EFA_Instagram_Post copy.webp",
+    "orientation": "portrait"
+  },
+  {
+    "title": "Project 4",
+    "src": "projects/project4.webp",
+    "orientation": "landscape"
+  }
 ]
