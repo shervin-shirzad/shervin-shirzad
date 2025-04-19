@@ -76,26 +76,26 @@ nav a {
 .project {
   break-inside: avoid;
   margin-bottom: 1rem;
-  background: #1a1a1a;
-  padding: 0.5rem;
-  border-radius: 10px;
   transition: background 0.3s;
 }
 
 body.light .project {
-  background: #eaeaea;
+  background: transparent;
 }
 
 .project img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 0;
   display: block;
+  pointer-events: none;
+  user-select: none;
 }
 
 .project h2 {
   margin-top: 0.5rem;
   font-size: 1rem;
   text-align: center;
+  font-family: 'Museo_Slab_100';
 }
 
 footer {
@@ -116,11 +116,16 @@ footer {
 }
 
 @font-face {
+  font-family: 'Museo_Slab_100';
+  src: url('fonts/Museo_Slab_100.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'Museo_Slab_300';
   src: url('fonts/Museo_Slab_300.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Museo_Slab_700';
-  src: url('fonts/Museo_Slab_700.otf') format('opentype');
+  font-family: 'Museo_Slab_500';
+  src: url('fonts/Museo_Slab_500.otf') format('opentype');
 }
