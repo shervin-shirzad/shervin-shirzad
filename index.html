@@ -137,6 +137,14 @@
       height: auto;
       object-fit: cover;
       display: block;
+      min-height: 200px;
+      background-color: #e0e0e0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .project img.loaded {
+      opacity: 1;
     }
 
     .project h2 {
@@ -214,21 +222,34 @@
       body.style.color = isDark ? 'var(--text-dark)' : 'var(--text-light)';
     }
 
-    fetch('images.json')
-      .then(res => res.json())
-      .then(images => {
-        const gallery = document.getElementById('gallery');
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('images.json')
+        .then(res => res.json())
+        .then(images => {
+          const gallery = document.getElementById('gallery');
 
-        images.forEach(img => {
-          const item = document.createElement('div');
-          item.className = 'project';
-          item.innerHTML = `
-            <img src="${img.src}" alt="${img.title}" loading="lazy" />
-            <h2>${img.title}</h2>
-          `;
-          gallery.appendChild(item);
+          images.forEach(img => {
+            const item = document.createElement('div');
+            item.className = 'project';
+
+            const imageElement = document.createElement('img');
+            imageElement.src = img.src;
+            imageElement.alt = img.title;
+            imageElement.loading = 'lazy';
+
+            imageElement.onload = () => {
+              imageElement.classList.add('loaded');
+            };
+
+            const title = document.createElement('h2');
+            title.textContent = img.title;
+
+            item.appendChild(imageElement);
+            item.appendChild(title);
+            gallery.appendChild(item);
+          });
         });
-      });
+    });
   </script>
 </body>
 </html>
