@@ -149,6 +149,13 @@
       color: #fff;
     }
 
+    section#about, section#contact {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
     footer {
       padding: 2rem 1rem;
       text-align: center;
@@ -188,6 +195,14 @@
   </header>
   <main>
     <section class="gallery" id="gallery"></section>
+    <section id="about">
+      <h2>About</h2>
+      <p>Hello! I'm Shervin Shirzad, a multidisciplinary designer and creative thinker. This is my portfolio where I share selected works and experiments.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>You can reach me through my social media links below or send me a message at <a href="mailto:hello@shervinshirzad.com">hello@shervinshirzad.com</a>.</p>
+    </section>
   </main>
   <footer>
     <div class="social-icons">
@@ -204,7 +219,6 @@
     const body = document.body;
     const checkbox = document.querySelector('.theme-switch input');
 
-    // Default to light mode
     body.style.backgroundColor = 'var(--bg-light)';
     body.style.color = 'var(--text-light)';
     checkbox.checked = false;
@@ -224,7 +238,7 @@
           const item = document.createElement('div');
           item.className = 'project';
           item.innerHTML = `
-            <img src="${img.src}" alt="${img.title}" />
+            <img src="${img.src}" alt="${img.title}" loading="lazy" />
             <h2>${img.title}</h2>
           `;
           gallery.appendChild(item);
