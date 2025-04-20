@@ -294,4 +294,24 @@
             const item = document.createElement('div');
             item.className = 'project';
 
-            const imageElement = document.createElement('img
+            const imageElement = document.createElement('img');
+            imageElement.src = img.src;
+            imageElement.alt = img.title;
+            imageElement.loading = 'lazy';
+
+            imageElement.onload = () => {
+              imageElement.classList.add('loaded');
+            };
+
+            const title = document.createElement('h2');
+            title.textContent = img.title;
+
+            item.appendChild(imageElement);
+            item.appendChild(title);
+            gallery.appendChild(item);
+          });
+        });
+    });
+  </script>
+</body>
+</html>
