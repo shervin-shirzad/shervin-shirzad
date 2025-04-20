@@ -41,56 +41,7 @@
     <div class="back-to-top">
       <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
     </div>
-    <p>&copy; 2025 Shervin Shirzad</p>
+    <p>&copy; 2025 Shervin Shirzad. All rights reserved.</p>
   </footer>
-
-  <script>
-    const body = document.body;
-    const checkbox = document.querySelector('.theme-switch input');
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-
-    body.style.backgroundColor = 'var(--bg-light)';
-    body.style.color = 'var(--text-light)';
-    header.style.backgroundColor = 'var(--header-light)';
-    footer.style.backgroundColor = 'var(--bg-light)';
-    checkbox.checked = false;
-
-    function toggleTheme(toggle) {
-      const isDark = toggle.checked;
-      body.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
-      body.style.color = isDark ? 'var(--text-dark)' : 'var(--text-light)';
-      header.style.backgroundColor = isDark ? 'var(--header-dark)' : 'var(--header-light)';
-      footer.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('images.json')
-        .then(res => res.json())
-        .then(images => {
-          const gallery = document.getElementById('portfolio');
-          images.forEach(img => {
-            const item = document.createElement('div');
-            item.className = 'project';
-
-            const imageElement = document.createElement('img');
-            imageElement.src = img.src;
-            imageElement.alt = img.title;
-            imageElement.loading = 'lazy';
-
-            imageElement.onload = () => {
-              imageElement.classList.add('loaded');
-            };
-
-            const title = document.createElement('h2');
-            title.textContent = img.title;
-
-            item.appendChild(imageElement);
-            item.appendChild(title);
-            gallery.appendChild(item);
-          });
-        });
-    });
-  </script>
 </body>
 </html>
