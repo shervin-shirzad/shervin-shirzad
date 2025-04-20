@@ -206,13 +206,20 @@ footer {
 }
 
 .back-to-top a {
-  color: inherit;
-  text-decoration: none;
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
   font-weight: 500;
   font-size: 1rem;
+  color: inherit;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
 .back-to-top a:hover {
   color: #000;
+  text-decoration: underline; /* اگه زیرخط در حالت hover بخوای */
 }
+
