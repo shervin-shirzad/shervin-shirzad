@@ -1,4 +1,5 @@
 /* styles.css */
+
 @font-face {
   font-family: 'Museo Slab';
   src: url('fonts/Museo_Slab_100.otf') format('opentype');
@@ -59,7 +60,6 @@ nav {
 
 nav a {
   margin: 0 1rem;
-  color: var(--link-inactive-light);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -67,6 +67,10 @@ nav a {
 
 nav a.active {
   color: var(--link-active-light);
+}
+
+nav a:not(.active) {
+  color: var(--link-inactive-light);
 }
 
 .theme-switch {
@@ -205,6 +209,10 @@ footer {
   color: #aaa;
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.back-to-top:hover {
+  color: var(--text-light);
 }
 
 .back-to-top i {
