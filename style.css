@@ -24,6 +24,10 @@
   --text-dark: #ffffff;
   --header-light: #e1e1e1;
   --header-dark: #161616;
+  --link-active-light: #000;
+  --link-inactive-light: #666;
+  --link-active-dark: #fff;
+  --link-inactive-dark: #aaa;
 }
 
 body {
@@ -54,20 +58,13 @@ nav {
 
 nav a {
   margin: 0 1rem;
-  color: inherit;
   text-decoration: none;
   font-weight: 500;
-  opacity: 0.6;
-  transition: opacity 0.3s;
+  transition: color 0.3s;
 }
 
 nav a.active {
-  opacity: 1;
   text-decoration: underline;
-}
-
-nav a:hover {
-  opacity: 1;
 }
 
 .social-icons {
@@ -206,20 +203,26 @@ footer {
 }
 
 .back-to-top a {
-  all: unset;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1rem;
   color: inherit;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
   transition: color 0.3s;
 }
 
 .back-to-top a:hover {
   color: #000;
-  text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery {
+    column-count: 1;
+    padding: 1rem;
+  }
+}
