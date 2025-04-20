@@ -29,10 +29,14 @@
     :root {
       --bg-light: #f3f3f2;
       --bg-dark: #181818;
-      --text-light: #000000;
-      --text-dark: #ffffff;
+      --text-light: #444444;
+      --text-dark: rgba(255, 255, 255, 0.85);
       --header-light: #e1e1e1;
       --header-dark: #161616;
+      --link-active-light: #444444;
+      --link-inactive-light: #BBBBBB;
+      --link-active-dark: rgba(255, 255, 255, 0.85);
+      --link-inactive-dark: rgba(255, 255, 255, 0.4);
     }
 
     body {
@@ -63,15 +67,14 @@
 
     nav a {
       margin: 0 1rem;
-      color: inherit;
+      color: var(--link-inactive-light);
       text-decoration: none;
       font-weight: 500;
-      opacity: 0.6;
-      transition: opacity 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     nav a.active {
-      opacity: 1;
+      color: var(--link-active-light);
     }
 
     .theme-switch {
@@ -122,41 +125,12 @@
       background-color: #2196F3;
     }
 
-    .layout-switch {
-      text-align: center;
-      margin: 1rem;
-    }
-
-    .layout-switch button {
-      font-family: inherit;
-      font-size: 1rem;
-      margin: 0 0.5rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #ddd;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .layout-switch button.active {
-      background-color: #2196F3;
-      color: #fff;
-    }
-
     .gallery {
       column-count: 3;
       column-gap: 1rem;
       padding: 2rem;
       max-width: 1400px;
       margin: 0 auto;
-    }
-
-    .gallery.grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-      column-count: auto;
     }
 
     .project {
@@ -271,10 +245,6 @@
     </div>
   </header>
   <main>
-    <div class="layout-switch">
-      <button onclick="switchLayout(false)" class="active">Column Layout</button>
-      <button onclick="switchLayout(true)">Grid Layout</button>
-    </div>
     <section class="gallery" id="gallery"></section>
   </main>
   <footer>
@@ -286,18 +256,17 @@
     const body = document.body;
     const checkbox = document.querySelector('.theme-switch input');
     const header = document.querySelector('header');
+    const navLinks = document.querySelectorAll('nav a');
 
     function applyTheme(isDark) {
       body.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
       body.style.color = isDark ? 'var(--text-dark)' : 'var(--text-light)';
       header.style.backgroundColor = isDark ? 'var(--header-dark)' : 'var(--header-light)';
-    }
-
-    function switchLayout(toGrid) {
-      const gallery = document.getElementById('gallery');
-      gallery.classList.toggle('grid', toGrid);
-      document.querySelectorAll('.layout-switch button').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.layout-switch button')[toGrid ? 1 : 0].classList.add('active');
+      navLinks.forEach(link => {
+        link.style.color = link.classList.contains('active')
+          ? (isDark ? 'var(--link-active-dark)' : 'var(--link-active-light)')
+          : (isDark ? 'var(--link-inactive-dark)' : 'var(--link-inactive-light)');
+      });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -314,11 +283,13 @@
             item.className = 'project';
 
             const imageElement = document.createElement('img');
-            imageElement.src = img.src;
             imageElement.alt = img.title;
             imageElement.loading = 'lazy';
 
-            imageElement.onload = () => {
+            const tempImg = new Image();
+            tempImg.src = img.src;
+            tempImg.onload = () => {
+              imageElement.src = img.src;
               imageElement.classList.add('loaded');
             };
 
