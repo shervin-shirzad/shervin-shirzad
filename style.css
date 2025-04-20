@@ -220,6 +220,6 @@ footer {
 
 .back-to-top a:hover {
   color: #000;
-  text-decoration: underline; /* اگه زیرخط در حالت hover بخوای */
+  text-decoration: underline;
 }
 
