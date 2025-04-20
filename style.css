@@ -1,5 +1,4 @@
-/* استایل‌های پیش‌فرض */
-
+/* styles.css */
 @font-face {
   font-family: 'Museo Slab';
   src: url('fonts/Museo_Slab_100.otf') format('opentype');
@@ -20,10 +19,16 @@
 }
 
 :root {
-  --bg-light: #f5f5f5;
-  --bg-dark: #121212;
-  --text-light: #000000;
-  --text-dark: #ffffff;
+  --bg-light: #f3f3f2;
+  --bg-dark: #181818;
+  --text-light: #444444;
+  --text-dark: rgba(255, 255, 255, 0.85);
+  --header-light: #e1e1e1;
+  --header-dark: #161616;
+  --link-active-light: #444444;
+  --link-inactive-light: #BBBBBB;
+  --link-active-dark: rgba(255, 255, 255, 0.85);
+  --link-inactive-dark: rgba(255, 255, 255, 0.4);
 }
 
 body {
@@ -38,6 +43,8 @@ header {
   padding: 2rem;
   text-align: center;
   position: relative;
+  background-color: var(--header-light);
+  transition: background-color 0.3s ease;
 }
 
 header h1 {
@@ -47,14 +54,19 @@ header h1 {
 }
 
 nav {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 nav a {
   margin: 0 1rem;
-  color: inherit;
+  color: var(--link-inactive-light);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a.active {
+  color: var(--link-active-light);
 }
 
 .theme-switch {
@@ -131,11 +143,12 @@ input:checked + .slider {
   object-fit: cover;
   display: block;
   min-height: 200px;
-  background: linear-gradient(100deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-  background-size: 400% 100%;
-  animation: shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: pulse 1.5s infinite linear;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  border-radius: 8px;
 }
 
 .project img.loaded {
@@ -144,12 +157,12 @@ input:checked + .slider {
   background: none;
 }
 
-@keyframes shimmer {
+@keyframes pulse {
   0% {
-    background-position: -400px 0;
+    background-position: -150% 0;
   }
   100% {
-    background-position: 400px 0;
+    background-position: 150% 0;
   }
 }
 
@@ -163,12 +176,8 @@ input:checked + .slider {
   color: #fff;
 }
 
-footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 1rem;
-  background-color: transparent;
-  color: #aaa;
+.social-icons {
+  margin-top: 1rem;
 }
 
 .social-icons a {
@@ -182,58 +191,22 @@ footer {
   color: #fff;
 }
 
-/* استایل‌های ریسپانسیو */
-
-/* برای تبلت‌ها */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  nav a {
-    font-size: 1rem;
-    margin: 0 0.5rem;
-  }
-
-  .gallery {
-    column-count: 2;
-  }
-
-  .project img {
-    min-height: 150px;
-  }
-
-  .theme-switch {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-  }
+footer {
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #aaa;
 }
 
-/* برای گوشی‌های هوشمند */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
+.back-to-top {
+  display: block;
+  margin-bottom: 1rem;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
 
-  nav a {
-    font-size: 0.9rem;
-    margin: 0 0.5rem;
-  }
-
-  .gallery {
-    column-count: 1;
-  }
-
-  .project img {
-    min-height: 100px;
-  }
-
-  footer {
-    font-size: 0.9rem;
-  }
-
-  .social-icons a {
-    font-size: 1rem;
-  }
+.back-to-top i {
+  margin-left: 0.5rem;
 }
