@@ -1,3 +1,4 @@
+// script.js
 const body = document.body;
 const checkbox = document.querySelector('.theme-switch input');
 const header = document.querySelector('header');
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('images.json')
     .then(res => res.json())
     .then(images => {
-      const gallery = document.getElementById('gallery');
+      const gallery = document.querySelector('.gallery');
 
       images.forEach(img => {
         const item = document.createElement('div');
