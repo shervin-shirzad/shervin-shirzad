@@ -38,32 +38,17 @@
     body {
       margin: 0;
       font-family: 'Museo Slab', sans-serif;
-      transition: all 0.3s ease;
-    }
-
-    body.light {
       background-color: var(--bg-light);
       color: var(--text-light);
-    }
-
-    body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
+      transition: all 0.3s ease;
     }
 
     header {
       padding: 2rem;
       text-align: center;
       position: relative;
-      transition: background-color 0.3s ease;
-    }
-
-    header.light {
       background-color: var(--header-light);
-    }
-
-    header.dark {
-      background-color: var(--header-dark);
+      transition: background-color 0.3s ease;
     }
 
     header h1 {
@@ -81,13 +66,33 @@
       color: inherit;
       text-decoration: none;
       font-weight: 500;
-      opacity: 0.5;
+      opacity: 0.6;
       transition: opacity 0.3s;
     }
 
     nav a.active {
       opacity: 1;
-      border-bottom: 2px solid currentColor;
+      text-decoration: underline;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      margin: 0 0.5rem;
+      color: #555;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #000;
     }
 
     .theme-switch {
@@ -200,32 +205,29 @@
       padding: 2rem 1rem;
       text-align: center;
       font-size: 1rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    footer.light {
       background-color: var(--bg-light);
-      color: #aaa;
+      color: #777;
+      transition: background-color 0.3s;
     }
 
-    footer.dark {
-      background-color: var(--bg-dark);
-      color: #ccc;
+    .back-to-top {
+      margin-bottom: 1rem;
     }
 
-    .social-icons a {
-      margin: 0 0.5rem;
-      color: #aaa;
-      font-size: 1.2rem;
+    .back-to-top a {
+      color: inherit;
       text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
-    .social-icons a:hover {
-      color: #fff;
+    .back-to-top a:hover {
+      color: #000;
     }
   </style>
 </head>
-<body>
+<body id="top">
   <header>
     <h1>Shervin Shirzad</h1>
     <nav>
@@ -233,6 +235,13 @@
       <a href="about.html" target="_blank">About</a>
       <a href="contact.html" target="_blank">Contact</a>
     </nav>
+    <div class="social-icons">
+      <a href="https://www.ghub.blog/" target="_blank"><i class="fas fa-globe"></i></a>
+      <a href="https://instagram.com/shervin.shirzad.ss" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/shervin-shirzad/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://t.me/ShervinShirzad" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://wa.me/989355498747" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
     <div class="theme-switch">
       <i class="fas fa-sun"></i>
       <label>
@@ -242,16 +251,14 @@
       <i class="fas fa-moon"></i>
     </div>
   </header>
+
   <main>
-    <section class="gallery" id="gallery"></section>
+    <section class="gallery" id="portfolio"></section>
   </main>
+
   <footer>
-    <div class="social-icons">
-      <a href="https://www.ghub.blog/" target="_blank"><i class="fas fa-globe"></i></a>
-      <a href="https://instagram.com/shervin.shirzad.ss" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/shervin-shirzad/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://t.me/ShervinShirzad" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="https://wa.me/989355498747" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="back-to-top">
+      <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
     </div>
     <p>&copy; 2025 Shervin Shirzad</p>
   </footer>
@@ -262,54 +269,29 @@
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
 
-    // تنظیم پیش‌فرض تم روشن
-    document.addEventListener('DOMContentLoaded', () => {
-      body.classList.add('light');
-      header.classList.add('light');
-      footer.classList.add('light');
+    // Set default theme (light)
+    body.style.backgroundColor = 'var(--bg-light)';
+    body.style.color = 'var(--text-light)';
+    header.style.backgroundColor = 'var(--header-light)';
+    footer.style.backgroundColor = 'var(--bg-light)';
+    checkbox.checked = false;
 
-      // بارگذاری تصاویر
+    function toggleTheme(toggle) {
+      const isDark = toggle.checked;
+      body.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
+      body.style.color = isDark ? 'var(--text-dark)' : 'var(--text-light)';
+      header.style.backgroundColor = isDark ? 'var(--header-dark)' : 'var(--header-light)';
+      footer.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
       fetch('images.json')
         .then(res => res.json())
         .then(images => {
-          const gallery = document.getElementById('gallery');
+          const gallery = document.getElementById('portfolio');
 
           images.forEach(img => {
             const item = document.createElement('div');
             item.className = 'project';
 
-            const imageElement = document.createElement('img');
-            imageElement.src = img.src;
-            imageElement.alt = img.title;
-            imageElement.loading = 'lazy';
-
-            imageElement.onload = () => {
-              imageElement.classList.add('loaded');
-            };
-
-            const title = document.createElement('h2');
-            title.textContent = img.title;
-
-            item.appendChild(imageElement);
-            item.appendChild(title);
-            gallery.appendChild(item);
-          });
-        });
-    });
-
-    // تغییر تم با سوییچ
-    function toggleTheme(toggle) {
-      const isDark = toggle.checked;
-
-      body.classList.toggle('dark', isDark);
-      body.classList.toggle('light', !isDark);
-
-      header.classList.toggle('dark', isDark);
-      header.classList.toggle('light', !isDark);
-
-      footer.classList.toggle('dark', isDark);
-      footer.classList.toggle('light', !isDark);
-    }
-  </script>
-</body>
-</html>
+            const imageElement = document.createElement('img
