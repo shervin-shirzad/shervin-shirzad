@@ -231,6 +231,10 @@ footer {
   text-decoration: underline;
 }
 
+body.dark .back-to-top a:hover {
+  color: #fff;
+}
+
 @media (max-width: 1024px) {
 .gallery {
   column-count: 2;
