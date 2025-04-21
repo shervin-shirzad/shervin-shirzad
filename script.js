@@ -28,7 +28,13 @@ function createProjectElement(img) {
   const imageElement = document.createElement('img');
   imageElement.alt = img.title;
   imageElement.loading = 'lazy';
-  imageElement.src = img.src; // بدون واترمارک در گالری
+
+  const tempImg = new Image();
+  tempImg.src = img.src;
+  tempImg.onload = () => {
+    imageElement.src = img.src;
+    imageElement.classList.add('loaded');
+  };
 
   const title = document.createElement('h2');
   title.textContent = img.title;
