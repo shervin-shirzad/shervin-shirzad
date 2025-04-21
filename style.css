@@ -278,17 +278,3 @@ body.dark .back-to-top a:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
-.watermark {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  border-radius: 5px;
-  pointer-events: none; /* جلوگیری از اختلال در تعامل با تصویر */
-}
-
