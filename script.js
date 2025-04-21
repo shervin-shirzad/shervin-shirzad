@@ -84,13 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function toggleTheme(toggle) {
+  // بررسی اینکه آیا تم روشن است یا تاریک
   if (toggle.checked) {
-    body.classList.add('dark');
-    body.classList.remove('light');
+    document.body.classList.add('dark');
+    document.body.classList.remove('light');
   } else {
-    body.classList.add('light');
-    body.classList.remove('dark');
+    document.body.classList.add('light');
+    document.body.classList.remove('dark');
   }
   
   applyTheme(toggle.checked);
 }
+
