@@ -21,6 +21,16 @@ function applyTheme(isDark) {
   footer.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
 }
 
+function addWatermark(imageElement) {
+  // ایجاد یک div برای واترمارک
+  const watermark = document.createElement('div');
+  watermark.classList.add('watermark');
+  watermark.innerText = 'Shervin Shirzad';
+  
+  // قرار دادن واترمارک روی تصویر
+  imageElement.parentElement.appendChild(watermark);
+}
+
 function createProjectElement(img) {
   const item = document.createElement('div');
   item.className = 'project';
@@ -34,6 +44,7 @@ function createProjectElement(img) {
   tempImg.onload = () => {
     imageElement.src = img.src;
     imageElement.classList.add('loaded');
+    addWatermark(imageElement); // اضافه کردن واترمارک پس از بارگذاری تصویر
   };
 
   const title = document.createElement('h2');
@@ -95,4 +106,3 @@ function toggleTheme(toggle) {
   
   applyTheme(toggle.checked);
 }
-
