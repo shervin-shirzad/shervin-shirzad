@@ -88,32 +88,3 @@ function toggleTheme(toggle) {
   
   applyTheme(toggle.checked);
 }
-
-// این تابع برای افزودن واترمارک به تصویر در تب جدید است
-function addWatermarkToImage(imageElement) {
-  const watermark = document.createElement('div');
-  watermark.classList.add('watermark');
-  watermark.innerText = 'Shervin Shirzad';
-  
-  imageElement.style.position = 'relative';
-  watermark.style.position = 'absolute';
-  watermark.style.bottom = '10px';
-  watermark.style.right = '10px';
-  watermark.style.color = 'rgba(255, 255, 255, 0.7)';
-  watermark.style.fontSize = '1.5rem';
-  watermark.style.fontWeight = 'bold';
-  watermark.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  watermark.style.padding = '5px';
-  watermark.style.borderRadius = '5px';
-  watermark.style.pointerEvents = 'none';
-
-  imageElement.parentElement.appendChild(watermark);
-}
-
-// وقتی کاربر تصویر را در تب جدید باز می‌کند
-window.addEventListener('load', () => {
-  const imagesInTab = document.querySelectorAll('img'); // دریافت همه تصاویر در تب جدید
-  imagesInTab.forEach(imageElement => {
-    addWatermarkToImage(imageElement); // افزودن واترمارک به هر تصویر
-  });
-});
