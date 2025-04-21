@@ -90,6 +90,10 @@ nav a:hover {
   color: #000;
 }
 
+body[data-theme='dark'] .social-icons a:hover {
+  color: #fff; 
+}
+
 .theme-switch {
   position: absolute;
   top: 1rem;
