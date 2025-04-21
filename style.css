@@ -52,6 +52,10 @@ header h1 {
   font-weight: 500;
 }
 
+img {
+  pointer-events: none;
+}
+
 nav {
   margin-bottom: 1.5rem;
 }
