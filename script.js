@@ -112,8 +112,8 @@ function addWatermarkToImage(imageElement) {
 
 // وقتی کاربر تصویر را در تب جدید باز می‌کند
 window.addEventListener('load', () => {
-  const imageElement = document.querySelector('img'); // فرض می‌کنیم کاربر تصویر را در تب جدید باز کرده است
-  if (imageElement) {
-    addWatermarkToImage(imageElement); // افزودن واترمارک به تصویر
-  }
+  const imagesInTab = document.querySelectorAll('img'); // دریافت همه تصاویر در تب جدید
+  imagesInTab.forEach(imageElement => {
+    addWatermarkToImage(imageElement); // افزودن واترمارک به هر تصویر
+  });
 });
