@@ -17,6 +17,8 @@ function applyTheme(isDark) {
   navLinks.forEach(link => {
     link.style.color = '';
   });
+  const footer = document.querySelector('footer');
+  footer.style.backgroundColor = isDark ? 'var(--bg-dark)' : 'var(--bg-light)';
 }
 
 function createProjectElement(img) {
