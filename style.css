@@ -26,13 +26,16 @@
   --header-dark: #161616;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Museo Slab', sans-serif;
   background-color: var(--bg-light);
   color: var(--text-light);
   transition: all 0.3s ease;
-  scroll-behavior: smooth;
 }
 
 header {
