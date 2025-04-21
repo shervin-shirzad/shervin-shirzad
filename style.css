@@ -74,6 +74,10 @@ nav a:hover {
   opacity: 1;
 }
 
+img {
+  pointer-events: none;
+}
+
 .social-icons {
   margin-top: 1rem;
 }
