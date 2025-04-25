@@ -194,14 +194,9 @@ input:checked + .slider {
   }
 }
 
+/* حذف استایل مربوط به h2 در project */
 .project h2 {
-  margin: 0;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 300;
-  text-align: center;
-  background-color: rgba(0,0,0,0.6);
-  color: #fff;
+  display: none;
 }
 
 footer {
@@ -236,17 +231,18 @@ footer {
 }
 
 @media (max-width: 1024px) {
-.gallery {
-  column-count: 2;
-}
+  .gallery {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 640px) {
-.gallery {
-  column-count: 1;
-  padding: 1rem;
+  .gallery {
+    column-count: 1;
+    padding: 1rem;
+  }
 }
-}
+
 #loading-indicator {
   display: none;
   text-align: center;
