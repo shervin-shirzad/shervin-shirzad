@@ -30,6 +30,9 @@ function createProjectElement(img) {
   imageElement.alt = img.title;
   imageElement.loading = 'lazy';
 
+  const title = document.createElement('h2');
+  title.textContent = img.title;
+
   const tempImg = new Image();
   tempImg.src = img.src;
   tempImg.onload = () => {
@@ -37,9 +40,7 @@ function createProjectElement(img) {
     imageElement.classList.add('loaded');
   };
 
-  const title = document.createElement('h2');
-  title.textContent = img.title;
-
+  // اول تصویر، سپس عنوان
   item.appendChild(imageElement);
   item.appendChild(title);
 
