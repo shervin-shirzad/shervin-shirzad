@@ -286,8 +286,9 @@ footer {
 
 .filter:hover,
 .filter.active {
-  background-color: #674EA7;
+  background-color: #555;
   color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* پروژه‌ها باید دسته‌بندی خاص داشته باشند */
@@ -361,8 +362,9 @@ body.dark .filter {
 
 body.dark .filter:hover,
 body.dark .filter.active {
-  background-color: #a38de0;
+  background-color: #151515;
   color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
 }
 
 a:focus,
