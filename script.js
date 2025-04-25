@@ -94,15 +94,3 @@ function toggleTheme(toggle) {
   
   applyTheme(toggle.checked);
 }
-
-function filterGallery(category) {
-  const projects = document.querySelectorAll('.project');
-  projects.forEach(project => {
-    const projectCategory = project.getAttribute('data-category');
-    if (category === 'all' || projectCategory === category) {
-      project.style.display = 'block';
-    } else {
-      project.style.display = 'none';
-    }
-  });
-}
