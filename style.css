@@ -194,14 +194,9 @@ input:checked + .slider {
   }
 }
 
+/* حذف استایل مربوط به h2 در project */
 .project h2 {
-  margin: 0;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 300;
-  text-align: center;
-  background-color: rgba(0,0,0,0.6);
-  color: #fff;
+  display: none;
 }
 
 footer {
@@ -236,17 +231,18 @@ footer {
 }
 
 @media (max-width: 1024px) {
-.gallery {
-  column-count: 2;
-}
+  .gallery {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 640px) {
-.gallery {
-  column-count: 1;
-  padding: 1rem;
+  .gallery {
+    column-count: 1;
+    padding: 1rem;
+  }
 }
-}
+
 #loading-indicator {
   display: none;
   text-align: center;
@@ -310,24 +306,38 @@ footer {
   display: none;
 }
 
-/* کپشن روی تصویر شبیه Room120 */
-.project h2 {
+/* کپشن روی تصویر به صورت باکس کوچک‌تر */
+/* کپشن روی تصویر به صورت باکس کوچک‌تر */
+.project .caption {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #1b1b1b;
-  background-color: rgba(255,255,255,0.9);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  max-width: 80%;
+  transform: translateY(150%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
-.project:hover h2 {
+.project:hover .caption {
   transform: translateY(0);
+  opacity: 1;
+}
+
+.project .caption h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+
+.project .caption p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #444;
 }
 
 .project img {
