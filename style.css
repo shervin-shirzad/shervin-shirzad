@@ -310,7 +310,7 @@ footer {
   position: absolute;
   bottom: 1rem;
   left: 0;
-  right: 0; /* باکس تمام عرض تصویر را می‌گیرد */
+  right: 0; /* برای اینکه باکس عرض کامل تصویر رو پر کنه */
   background-color: rgba(0, 0, 0, 0.6); /* زمینه نیمه شفاف */
   padding: 0.8rem 1rem; /* padding از طرفین */
   box-sizing: border-box; /* برای اینکه padding به درستی محاسبه بشه */
@@ -318,7 +318,6 @@ footer {
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1; /* مطمئن می‌شود که باکس بالاتر از تصویر باشد */
 }
 
 .project:hover .caption {
@@ -338,6 +337,7 @@ footer {
   font-size: 0.9rem;
   color: #fff; /* رنگ متن سفید */
 }
+
 
 
 .project img {
