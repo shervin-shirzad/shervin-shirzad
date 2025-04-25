@@ -337,3 +337,35 @@ footer {
 .project:hover img {
   transform: scale(1.05);
 }
+
+body.dark .project .caption {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #f0f0f0;
+}
+
+body.dark .project .caption h2 {
+  color: #ffffff;
+}
+
+body.dark .project .caption p {
+  color: #cccccc;
+}
+
+body.dark .filter {
+  background-color: #333;
+  color: #ddd;
+}
+
+body.dark .filter:hover,
+body.dark .filter.active {
+  background-color: #a38de0;
+  color: #fff;
+}
+
+a:focus,
+.filter:focus,
+.back-to-top a:focus,
+.theme-switch:focus-within {
+  outline: 2px dashed #674EA7;
+  outline-offset: 4px;
+}
