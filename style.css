@@ -307,25 +307,25 @@ footer {
 }
 
 /* کپشن روی تصویر به صورت باکس کوچک‌تر */
+/* کپشن روی تصویر به صورت باکس کوچک‌تر */
 .project .caption {
   position: absolute;
   bottom: 1rem;
-  left: 0;
-  right: 0; /* برای اینکه باکس عرض کامل تصویر رو پر کنه */
-  background-color: rgba(0, 0, 0, 0.6); /* زمینه نیمه شفاف */
-  padding: 0.8rem 1rem; /* padding از طرفین */
-  box-sizing: border-box; /* برای اینکه padding به درستی محاسبه بشه */
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  max-width: 80%;
   transform: translateY(150%);
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
 .project:hover .caption {
   transform: translateY(0);
   opacity: 1;
 }
-
 
 .project .caption h2 {
   margin: 0;
