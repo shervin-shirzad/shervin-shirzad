@@ -194,10 +194,10 @@ input:checked + .slider {
   }
 }
 
-/* حذف استایل مربوط به h2 در project */
+/* حذف استایل مربوط به h2 در project 
 .project h2 {
   display: none;
-}
+}*/
 
 footer {
   padding: 2rem 1rem;
@@ -302,7 +302,7 @@ footer {
   overflow: hidden;
 }
 
-/*.project.hidden {
+.project.hidden {
   display: none;
 }
 
