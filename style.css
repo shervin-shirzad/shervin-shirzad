@@ -194,11 +194,6 @@ input:checked + .slider {
   }
 }
 
-/* حذف استایل مربوط به h2 در project 
-.project h2 {
-  display: none;
-}*/
-
 footer {
   padding: 2rem 1rem;
   text-align: center;
@@ -300,10 +295,6 @@ footer {
   position: relative;
   transition: all 0.3s ease;
   overflow: hidden;
-}
-
-/*.project.hidden {
-  display: none;
 }
 
 /* کپشن روی تصویر به صورت باکس کوچک‌تر */
