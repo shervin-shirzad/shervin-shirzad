@@ -194,9 +194,14 @@ input:checked + .slider {
   }
 }
 
-/* حذف استایل مربوط به h2 در project */
 .project h2 {
-  display: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
 }
 
 footer {
@@ -231,18 +236,17 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  .gallery {
-    column-count: 2;
-  }
+.gallery {
+  column-count: 2;
+}
 }
 
 @media (max-width: 640px) {
-  .gallery {
-    column-count: 1;
-    padding: 1rem;
-  }
+.gallery {
+  column-count: 1;
+  padding: 1rem;
 }
-
+}
 #loading-indicator {
   display: none;
   text-align: center;
@@ -297,53 +301,9 @@ footer {
 
 /* پروژه‌ها باید دسته‌بندی خاص داشته باشند */
 .project {
-  position: relative;
   transition: all 0.3s ease;
-  overflow: hidden;
 }
 
 .project.hidden {
   display: none;
-}
-
-.project .caption {
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
-  right: 0; /* باکس تمام عرض تصویر را می‌گیرد */
-  background-color: rgba(0, 0, 0, 0.6); /* زمینه نیمه شفاف */
-  padding: 0.8rem 1rem; /* padding از طرفین */
-  box-sizing: border-box; /* برای اینکه padding به درستی محاسبه بشه */
-  transform: translateY(150%);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1; /* مطمئن می‌شود که باکس بالاتر از تصویر باشد */
-}
-
-.project:hover .caption {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.project .caption h2 {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff; /* رنگ عنوان سفید */
-}
-
-.project .caption p {
-  margin: 0.3rem 0 0;
-  font-size: 0.9rem;
-  color: #fff; /* رنگ متن سفید */
-}
-
-
-.project img {
-  transition: transform 0.3s ease;
-}
-
-.project:hover img {
-  transform: scale(1.05);
 }
