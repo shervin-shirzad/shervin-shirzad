@@ -30,9 +30,6 @@ function createProjectElement(img) {
   imageElement.alt = img.title;
   imageElement.loading = 'lazy';
 
-  const title = document.createElement('h2');
-  title.textContent = img.title;
-
   const tempImg = new Image();
   tempImg.src = img.src;
   tempImg.onload = () => {
@@ -40,9 +37,20 @@ function createProjectElement(img) {
     imageElement.classList.add('loaded');
   };
 
-  // اول تصویر، سپس عنوان
+  const caption = document.createElement('div');
+  caption.className = 'caption';
+
+  const title = document.createElement('h2');
+  title.textContent = img.title;
+
+  const desc = document.createElement('p');
+  desc.textContent = img.desc || '';
+
+  caption.appendChild(title);
+  caption.appendChild(desc);
+
   item.appendChild(imageElement);
-  item.appendChild(title);
+  item.appendChild(caption);
 
   return item;
 }
