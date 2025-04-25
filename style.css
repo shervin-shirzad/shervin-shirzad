@@ -236,17 +236,18 @@ footer {
 }
 
 @media (max-width: 1024px) {
-.gallery {
-  column-count: 2;
-}
+  .gallery {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 640px) {
-.gallery {
-  column-count: 1;
-  padding: 1rem;
+  .gallery {
+    column-count: 1;
+    padding: 1rem;
+  }
 }
-}
+
 #loading-indicator {
   display: none;
   text-align: center;
