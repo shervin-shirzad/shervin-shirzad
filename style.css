@@ -298,25 +298,13 @@ footer {
 }
 
 /* کپشن روی تصویر به صورت باکس کوچک‌تر */
-/*.project .caption {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  padding: 0.8rem 1rem;
-  max-width: 80%;
-  transform: translateY(150%);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}*/
-
 .project .caption {
   position: absolute;
   bottom: 30px;
-  left: 0;
-  width: 100%;
+  width: auto;
+  right: 20px;
+  left: 20px;
+  box-sizing: border-box; /* مهم! جلوگیری از بیرون‌زدن */
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   padding: 20px 27px;
@@ -325,6 +313,7 @@ footer {
   opacity: 0;
   box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
 }
+
 
 .project:hover .caption {
   transform: translateY(0);
