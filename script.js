@@ -4,6 +4,7 @@ const header = document.querySelector('header');
 const navLinks = document.querySelectorAll('nav a');
 const gallery = document.querySelector('.gallery');
 const loadingIndicator = document.getElementById('loading-indicator');
+const filters = document.querySelectorAll('.filter');
 
 let allImages = [];
 let currentIndex = 0;
@@ -23,7 +24,7 @@ function applyTheme(isDark) {
 
 function createProjectElement(img) {
   const item = document.createElement('div');
-  item.className = 'project';
+  item.className = `project ${img.category}`;
 
   const imageElement = document.createElement('img');
   imageElement.alt = img.title;
@@ -70,6 +71,27 @@ function handleScroll() {
   }
 }
 
+function filterProjects(category) {
+  const projects = document.querySelectorAll('.project');
+
+  projects.forEach(p => {
+    if (category === 'all' || p.classList.contains(category)) {
+      p.classList.remove('hidden');
+    } else {
+      p.classList.add('hidden');
+    }
+  });
+}
+
+filters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('.filter.active')?.classList.remove('active');
+    btn.classList.add('active');
+    const category = btn.dataset.rel;
+    filterProjects(category);
+  });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(false);
   checkbox.checked = false;
@@ -78,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.json())
     .then(images => {
       allImages = images;
-      loadNextBatch(); // load first batch
+      loadNextBatch();
       window.addEventListener('scroll', handleScroll);
     });
 });
@@ -91,6 +113,6 @@ function toggleTheme(toggle) {
     document.body.classList.add('light');
     document.body.classList.remove('dark');
   }
-  
+
   applyTheme(toggle.checked);
 }
