@@ -302,7 +302,7 @@ footer {
   overflow: hidden;
 }
 
-.project.hidden {
+/*.project.hidden {
   display: none;
 }
 
